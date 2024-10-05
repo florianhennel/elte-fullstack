@@ -1,0 +1,38 @@
+services:
+  deno-api:
+    build: .
+    container_name: deno-container
+    image: deno-image
+    ports:
+      - "3000:3000"
+    networks:
+      - deno-network
+    depends_on:
+      mongodb:
+        condition: service_started
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+        - action: rebuild
+          path: deno.json
+    
+  
+  mongodb:
+    image: mongo
+    container_name: mongo-container
+    ports:
+      - "27017:27017"
+    networks:
+      - deno-network
+    volumes:
+      - mongo-data:/data/db
+
+networks: # allow services to talk to each other while providing isolation from other docker container, running on the same host
+  deno-network:
+    driver: bridge
+
+volumes: # enable persistence of database data across container restart
+  mongo-data:
+    driver: local
