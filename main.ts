@@ -1,16 +1,15 @@
 import express from "express";
-import connectDb from "./db.ts";
+import connectDB from "./db.ts";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 import process from "node:process";
-
-import { User, UserInvalidToken, UserRefreshToken } from "./schema.ts";
+import { User, Card, Enemy, Level, Item, UserInvalidToken, UserRefreshToken } from "./schema.ts";
 const app = express();
 const port = 3000;
 
-connectDb();
+connectDB();
 
 app.use(express.json());
 
@@ -190,6 +189,14 @@ app.get(
     }
   },
 );
+app.get("/cards", isAuthenticated, async (req: express.Request, res: express.Response) => {
+  try {
+    const cards = await Card.find();
+    res.status(200).send(cards);
+  } catch (error) {
+    return res.status(500).send({ message: error.message });
+  }
+});
 
 async function isAuthenticated(
   req: express.Request,

@@ -1,6 +1,9 @@
 {
   "tasks": {
-    "dev": "deno run --allow-env --allow-sys --allow-read --allow-net --watch main.ts"
+    "up":"docker compose up -d",
+    "down": "docker compose down --volumes",
+    "dev": "docker compose run --rm deno-api deno run --allow-env --allow-sys --allow-read --allow-net --watch main.ts",
+    "seed": "docker compose run --rm deno-api deno run --allow-env --allow-sys --allow-read --allow-net --allow-write seed.ts"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
