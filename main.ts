@@ -6,16 +6,23 @@ import dotenv from "dotenv";
 dotenv.config();
 import process from "node:process";
 import { User, Card, Enemy, Level, Item, UserInvalidToken, UserRefreshToken } from "./schema.ts";
+import seedDatabase from "./seed.ts";
 const app = express();
 const port = 3000;
 
-connectDB();
+connectDB().then(async () => {
+  if (await Card.countDocuments() === 0) {
+    seedDatabase();
+  }
+});
 
 app.use(express.json());
 
 app.get(
   "/",
   (_req: express.Request, res: express.Response) => {
+    console.log("/get request");
+    
     res.send({ message: "Hello World!" });
   },
 );
@@ -65,7 +72,7 @@ app.post("/login", async (req: express.Request, res: express.Response) => {
       accessToken,
       refreshToken,
     });
-  } catch (error) {
+  } catch (error: any) {
     return res.status(500).send({ message: error.message });
   }
 });
@@ -91,8 +98,13 @@ app.post("/register", async (req: express.Request, res: express.Response) => {
       message: "User registered successfully",
       "user": user,
     });
-  } catch (error) {
-    return res.status(500).send({ message: error.message });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return res.status(500).send({ message: error.message });
+    }
+    else {
+      return res.status(500).send({ message: "Unknown error" });
+    }
   }
 });
 
@@ -143,7 +155,7 @@ app.post("/refresh", async (req: express.Request, res: express.Response) => {
       accessToken,
       refreshToken: newRefreshToken,
     });
-  } catch (error) {
+  } catch (error: unknown) {
     if (
       error instanceof jwt.TokenExpiredError ||
       error instanceof jwt.JsonWebTokenError
@@ -152,8 +164,12 @@ app.post("/refresh", async (req: express.Request, res: express.Response) => {
         message: "Refresh token invalid or expired",
       });
     }
-
-    return res.status(500).json({ message: error.message });
+    else if(error instanceof Error) {
+      return res.status(500).json({ message: error.message });
+    }
+    else {
+      return res.status(500).json({ message: "Unknown error" });
+    }
   }
 });
 
@@ -171,8 +187,13 @@ app.get(
       }).save();
 
       return res.status(204).send();
-    } catch (error) {
-      return res.status(500).json({ message: error.message });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return res.status(500).send({ message: error.message });
+      }
+      else {
+        return res.status(500).send({ message: "Unknown error" });
+      }
     }
   },
 );
@@ -184,17 +205,27 @@ app.get(
     try {
       const user = await User.find({ _id: req.user.id });
       res.status(200).send(user);
-    } catch (error) {
-      return res.status(500).send({ message: error.message });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return res.status(500).send({ message: error.message });
+      }
+      else {
+        return res.status(500).send({ message: "Unknown error" });
+      }
     }
   },
 );
-app.get("/cards", isAuthenticated, async (req: express.Request, res: express.Response) => {
+app.get("/cards", async (req: express.Request, res: express.Response) => {
   try {
     const cards = await Card.find();
     res.status(200).send(cards);
-  } catch (error) {
-    return res.status(500).send({ message: error.message });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return res.status(500).send({ message: error.message });
+    }
+    else {
+      return res.status(500).send({ message: "Unknown error" });
+    }
   }
 });
 
@@ -232,8 +263,11 @@ async function isAuthenticated(
         message: "Access token invalid",
         code: "AccessTokenInvalid",
       });
-    } else {
+    } else if (error instanceof Error) {
       return res.status(500).json({ message: error.message });
+    }
+    else{
+      return res.status(500).json({ message: "Unknown error" });
     }
   }
 }

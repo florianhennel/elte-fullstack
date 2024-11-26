@@ -23,19 +23,19 @@ const enemySchema = new Schema({
     health: { type: Number, required: true },
     attack: { type: Number, required: true },
     defense: { type: Number, required: true },
-    image: { type: String, required: true },
+    image: { type: String, required: false, default: "" },
 });
 
 const levelSchema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
-    image: { type: String, required: true },
+    image: { type: String, required: false, default: "" },
 });
 
 const itemSchema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
-    image: { type: String, required: true },
+    image: { type: String, required: false, default: "" },
 });
 
 const userRefreshTokenSchema = new Schema({
