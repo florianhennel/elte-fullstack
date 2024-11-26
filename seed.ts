@@ -1,10 +1,7 @@
-import mongoose from "mongoose";
-import connectDB from "./db.ts";
 import cardsData from './items.json' with { type: "json" };
 import { Card } from './schema.ts';
 
 export default async function seedDatabase() {
-    connectDB();
     const cards = cardsData.cards.map((card) => ({
         category: card.type,
         name: card.name,
@@ -21,5 +18,3 @@ export default async function seedDatabase() {
         console.error("Error seeding database:", error);
     }
 };
-
-seedDatabase();
