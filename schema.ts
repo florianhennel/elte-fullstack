@@ -35,6 +35,7 @@ const levelSchema = new Schema({
 const itemSchema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
+    userId : { type: Schema.Types.ObjectId, ref:'User', required: false, default: null },
     image: { type: String, required: false, default: "" },
 });
 
