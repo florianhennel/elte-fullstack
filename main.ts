@@ -86,8 +86,12 @@ app.post("/login", async (req: express.Request, res: express.Response) => {
       accessToken,
       refreshToken,
     });
-  } catch (error: any) {
-    return res.status(500).send({ message: error.message });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return res.status(500).send({ message: error.message });
+    } else {
+      return res.status(500).send({ message: "Unknown error" });
+    }
   }
 });
 app.post("/register", async (req: express.Request, res: express.Response) => {
