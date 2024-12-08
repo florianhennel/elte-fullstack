@@ -3,7 +3,7 @@ name: Test and Deploy App to Oracle VPS
 on:
   push:
     branches:
-      -master
+      - master
 
 jobs:
   lint:
@@ -39,6 +39,7 @@ jobs:
         run: deno test --allow-net --allow-env --allow-read
         
   deploy:
+    name: Deploy to Oracle VPS
     runs-on: ubuntu:latest
     
     steps:
