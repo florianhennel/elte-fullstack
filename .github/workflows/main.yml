@@ -1,4 +1,4 @@
-name: Build and Test App
+name: Test and Deploy App to Oracle VPS
 
 on:
   push:
