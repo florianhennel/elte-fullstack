@@ -3,6 +3,7 @@ import connectDB from "./db.ts";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import cors from 'cors';
 dotenv.config();
 import process from "node:process";
 import cookieParser from "cookie-parser";
@@ -26,6 +27,7 @@ connectDB().then(async () => {
   }
 });
 app.use(express.json());
+app.use(cors());
 app.use(cookieParser());
 
 app.get("/",(_req: express.Request, res: express.Response) => {
