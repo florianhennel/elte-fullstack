@@ -1,7 +1,7 @@
 import items from "./items.json" with { type: "json" };
 import { Card, Enemy, Level, Item } from "./schema.ts";
-import { fakerHU as faker } from "@faker-js/faker";
-import translate from "translate";
+//import { fakerHU as faker } from "@faker-js/faker";
+//import translate from "translate";
 
 export async function seedEnemies() {
   /*

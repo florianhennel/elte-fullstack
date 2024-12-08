@@ -6,7 +6,11 @@ export default async function connectDB() {
         const conn = await mongoose.connect(connectionString);
         console.log(`Database connected: ${conn.connection.name}`);
     } catch (err) {
-        console.error(err.message);
+        if (err instanceof Error) {
+            console.error(err.message);
+        } else {
+            console.error(err);
+        }
         process.exit(1);
     }
     return;

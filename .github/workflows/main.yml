@@ -21,6 +21,22 @@ jobs:
 
       - name: Run Deno Lint
         run: deno lint
+  
+  format:
+    name: Format Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.1.1
+
+      - name: Run Deno Format
+        run: deno fmt
 
   test:
     name: Run Tests
@@ -51,6 +67,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script:
             cd elte-fullstack
+            git pull origin master
             sudo docker compose down
             sudo docker compose up --build -d
     
