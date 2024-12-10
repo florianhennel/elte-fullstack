@@ -27,7 +27,12 @@ connectDB().then(async () => {
   }
 });
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin: "http://localhost:4200",
+    credentials: true,
+  },
+));
 app.use(cookieParser());
 
 app.get("/",(_req: express.Request, res: express.Response) => {
