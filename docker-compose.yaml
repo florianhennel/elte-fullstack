@@ -1,6 +1,6 @@
 services:
   deno-api:
-    build: /backend
+    build: backend
     container_name: deno-container
     image: deno-image
     ports:
@@ -19,7 +19,7 @@ services:
           path: deno.json
     
   angular-app:
-    build: /frontend
+    build: frontend
     container_name: angular-container
     image: angular-image
     ports:
