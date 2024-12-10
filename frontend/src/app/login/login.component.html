@@ -1,0 +1,41 @@
+<nz-card>
+  <h2>Bejelentkezés</h2>
+  <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Helyes e-mail cím megadása kötelező!">
+        <nz-input-group nzPrefixIcon="mail">
+          <input type="text" nz-input formControlName="email" placeholder="E-mail" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Jelszó megadása kötelező!">
+        <nz-input-group nzPrefixIcon="lock" [nzSuffix]="suffixTemplate">
+          <input
+            [type]="passwordVisible ? 'text' : 'password'"
+            nz-input
+            formControlName="password"
+            placeholder="Jelszó"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <div class="error">
+      <span *ngIf="unauthorizedError" nz-typography nzType="danger">Hibás e-mail cím vagy jelszó!</span>
+    </div>
+    <div class="buttons">
+      <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="validateForm.invalid">Bejelentkezés</button>
+      <a routerLink="/register">Regisztráció</a>
+    </div>
+  </form>
+</nz-card>
+
+
+<ng-template #suffixTemplate>
+  <span
+    nz-icon
+    class="ant-input-password-icon"
+    [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+    (click)="passwordVisible = !passwordVisible"
+  ></span>
+</ng-template>

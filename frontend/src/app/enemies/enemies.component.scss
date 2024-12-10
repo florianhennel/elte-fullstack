@@ -1,0 +1,106 @@
+@use '../../variables' as *;
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem;
+  }
+
+  nz-select {
+    width: 20rem;
+    height: 2rem;
+  }
+}
+
+.enemies {
+  display: flex;
+  margin: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .card {
+    width: 12rem;
+    padding: 24px;
+    border-radius: $rounded;
+    border-color: transparent;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .temp-image {
+      width: calc(12rem - 48px);
+      height: calc(12rem - 48px);
+      background-color: darkgray;
+      border-radius: $rounded;
+    }
+
+    h3 {
+      margin-block: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      overflow-wrap: break-word;
+    }
+
+    .cat-diff {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .category {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .difficulty {
+        width: 4rem;
+        height: 1rem;
+        border: 1px solid white;
+        border-radius: $round;
+        padding: 0.3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.3rem;
+
+        span {
+          border-radius: $round;
+          display: block;
+        }
+
+        &[data-category='Normal'] {
+          span:nth-child(1) {
+            background-color: lightgreen;
+          }
+        }
+        &[data-category='Boss'] {
+          span:nth-child(1),
+          span:nth-child(2) {
+            background-color: lightgreen;
+          }
+        }
+        &[data-category='Elite'] {
+          span:nth-child(1),
+          span:nth-child(2),
+          span:nth-child(3) {
+            background-color: lightgreen;
+          }
+        }
+      }
+    }
+  }
+}
+
+.padding {
+  height: 1px;
+}

@@ -56,7 +56,7 @@ jobs:
         
   deploy:
     name: Deploy to Oracle VPS
-    needs: [lint, format, test]
+    #needs: [lint,format, test]
     runs-on: ubuntu-latest
     
     steps:

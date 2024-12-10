@@ -1,0 +1,59 @@
+@use '../../variables' as *;
+
+header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+    height: 5rem;
+    width: 5rem;
+    display: grid;
+    place-items: center;
+
+    button {
+      border-color: transparent;
+      z-index: 10;
+      scale: 110%;
+      margin-inline: unset;
+    }
+  }
+
+  button {
+    margin-inline: 1rem;
+    border-radius: $rounded;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem;
+}
+
+.items {
+  display: flex;
+  margin: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  nz-card {
+    width: 15rem;
+    border-radius: $rounded;
+    border-color: transparent;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+
+    .description {
+      color: darkgray;
+    }
+  }
+}

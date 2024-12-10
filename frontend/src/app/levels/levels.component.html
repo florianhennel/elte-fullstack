@@ -1,0 +1,9 @@
+<app-header></app-header>
+<h2>Szintek</h2>
+<div class="levels">
+  <div class="image" *ngFor="let level of levels" [routerLink]="['./', level.id]">
+    <div class="temp-image"></div>
+    <h3>{{level.name}}</h3>
+  </div>
+</div>
+<div class="padding"></div>

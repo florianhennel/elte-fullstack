@@ -1,0 +1,12 @@
+<app-header back></app-header>
+<nz-card *ngIf="enemy">
+  <div class="temp-image"></div>
+  <h2>{{enemy.name}}</h2>
+  <p>Kategória: {{enemy.category}}</p>
+  <p>Életerő: {{enemy.health}}</p>
+  <p>Támadás: {{enemy.attack}}</p>
+  <p>Védekezés: {{enemy.defense}}</p>
+  <p>Leírás:</p>
+  <p class="description">{{enemy.description}}</p>
+</nz-card>
+<div class="padding"></div>

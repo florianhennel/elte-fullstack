@@ -1,0 +1,46 @@
+@use '../../variables' as *;
+
+nz-card {
+  left: 50%;
+  top: 5rem;
+  translate: -50% 0;
+  width: max(25%, 25rem);
+  border-radius: 10px;
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  padding-top: 2rem;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  nz-form-item {
+    margin-block: 2.5rem;
+    height: 2rem;
+
+    nz-input-group {
+      border-radius: $rounded;
+      height: 2.5rem;
+    }
+  }
+
+  .error {
+    height: 1rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+
+    button {
+      border-radius: $round;
+    }
+  }
+}

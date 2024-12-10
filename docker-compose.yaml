@@ -1,6 +1,6 @@
 services:
   deno-api:
-    build: .
+    build: /backend
     container_name: deno-container
     image: deno-image
     ports:
@@ -18,7 +18,22 @@ services:
         - action: rebuild
           path: deno.json
     
-  
+  angular-app:
+    build: /frontend
+    container_name: angular-container
+    image: angular-image
+    ports:
+      - "4200:80"
+    networks:
+      - deno-network
+    depends_on:
+      - deno-api
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+        
   mongodb:
     image: mongo
     container_name: mongo-container

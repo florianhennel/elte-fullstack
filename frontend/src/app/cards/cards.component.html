@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="top">
+  <h2>Kártyák</h2>
+  <nz-select [(ngModel)]="filter" (ngModelChange)="getCards()">
+    <nz-option nzValue="default" [nzLabel]="filter === 'default' ? 'Szűrés kategóriákra' : 'Összes'"></nz-option>
+    <nz-option *ngFor="let cat of categories" [nzValue]="cat.category" [nzLabel]="cat.categoryName"></nz-option>
+  </nz-select>
+</div>
+<div class="cards">
+  <nz-card *ngFor="let card of cards" [routerLink]="['./', card.id]">
+    <div class="image" [attr.data-rarity]="card.rarity">
+      <span class="cost">{{card.cost}}</span>
+      <div class="temp-image"></div>
+    </div>
+    <h3>{{card.name}}</h3>
+    <span class="category">{{card.category}}</span>
+  </nz-card>
+</div>
+<div class="padding"></div>

@@ -1,0 +1,20 @@
+<header>
+  <div class="back">
+    <button nz-button (click)="back()" nzSize="large" nzShape="circle">
+      <span nz-icon nzType="arrow-left"></span>
+    </button>
+  </div>
+  <div>
+    <button nz-button (click)="logout()" nzDanger nzSize="large">
+      Kijelentkezés
+    </button>
+  </div>
+</header>
+
+<h2>Tárgyak</h2>
+<div class="items">
+  <nz-card *ngFor="let item of items">
+    <h3>{{item.name}}</h3>
+    <span class="description">{{item.description}}</span>
+  </nz-card>
+</div>

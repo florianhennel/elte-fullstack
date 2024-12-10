@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="top">
+  <h2>Ellenségek</h2>
+  <nz-select [(ngModel)]="filter" (ngModelChange)="getEnemies()">
+    <nz-option nzValue="default" [nzLabel]="filter === 'default' ? 'Szűrés kategóriákra' : 'Összes'"></nz-option>
+    <nz-option *ngFor="let category of categories" [nzValue]="category" [nzLabel]="category"></nz-option>
+  </nz-select>
+</div>
+<div class="enemies">
+  <div class="card" *ngFor="let enemy of enemies" [routerLink]="['./', enemy.id]">
+    <div>
+      <div class="temp-image"></div>
+      <h3>{{enemy.name}}</h3>
+    </div>
+    <div class="cat-diff">
+      <span class="category">{{enemy.category}}</span>
+      <div class="difficulty" [attr.data-category]="enemy.category">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="padding"></div>

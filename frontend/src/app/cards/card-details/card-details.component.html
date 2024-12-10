@@ -1,0 +1,11 @@
+<app-header back></app-header>
+<nz-card *ngIf="card">
+  <div class="temp-image"></div>
+  <h2>{{card.name}}</h2>
+  <p>Kategória: {{card.category}}</p>
+  <p>Költség: {{card.cost}}</p>
+  <p>Ritkaság: <span [attr.data-rarity]="card.rarity">{{card.rarity}}</span></p>
+  <p>Leírás:</p>
+  <p class="description">{{card.description}}</p>
+</nz-card>
+<div class="padding"></div>

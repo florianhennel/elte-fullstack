@@ -1,0 +1,107 @@
+@use '../../variables' as *;
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem;
+  }
+
+  nz-select {
+    width: 20rem;
+    height: 2rem;
+  }
+}
+
+.cards {
+  display: flex;
+  margin: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  nz-card {
+    width: 12rem;
+    border-radius: $rounded;
+    border-color: transparent;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+
+    .image {
+      width: calc(12rem - 48px);
+      height: calc(12rem - 48px);
+      background-color: darkgray;
+      border-radius: $rounded;
+      position: relative;
+
+      .cost {
+        position: absolute;
+        top: 0;
+        right: 0;
+        translate: 50% -50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: darkred;
+        border-radius: $round;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.3rem;
+        z-index: 5;
+      }
+
+      .temp-image {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        background-color: darkgray;
+      }
+
+      &[data-rarity='Alapvető'] {
+        background-color: gray;
+      }
+      &[data-rarity='Közös'] {
+        background-color: dodgerblue;
+      }
+      &[data-rarity='Ritka'] {
+        background-color: purple;
+      }
+      &[data-rarity='Különleges'] {
+        background: linear-gradient(45deg,
+          rgb(255, 255, 255) 0%,
+          rgb(70, 229, 255) 25%,
+          rgb(244, 141, 238) 50%,
+          rgb(255, 248, 106) 75%,
+          rgb(255, 255, 255) 100%);
+      }
+      &[data-rarity='Átok'] {
+        background-color: black;
+      }
+    }
+
+    h3 {
+      margin-block: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      overflow-wrap: break-word;
+    }
+
+    .category {
+      display: block;
+      text-align: center;
+      overflow: hidden;
+    }
+  }
+}
+
+.padding {
+  height: 1px;
+}
