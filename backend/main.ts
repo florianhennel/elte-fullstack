@@ -29,7 +29,7 @@ connectDB().then(async () => {
 app.use(express.json());
 app.use(cors(
   {
-    origin: "http://localhost:4200",
+    origin: `http://${process.env.origin}:4200`,
     credentials: true,
   },
 ));
