@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Rúgás",
+    "type": "attack",
+    "cost": 1,
+    "image": "cards/1.png"
+  },
+  {
+    "id": 2,
+    "name": "Szúrás",
+    "type": "attack",
+    "cost": 1,
+    "image": "cards/2.png"
+  },
+  {
+    "id": 3,
+    "name": "Ököl",
+    "type": "attack",
+    "cost": 0,
+    "image": "cards/3.png"
+  },
+  {
+    "id": 4,
+    "name": "Alvás",
+    "type": "neutral",
+    "cost": 0,
+    "image": "cards/4.png"
+  },
+  {
+    "id": 5,
+    "name": "Unikum",
+    "type": "healing",
+    "cost": 0,
+    "image": "cards/5.png"
+  },
+  {
+    "id": 6,
+    "name": "Tányér",
+    "type": "neutral",
+    "cost": 0,
+    "image": "cards/6.png"
+  },
+  {
+    "id": 7,
+    "name": "Deszka",
+    "type": "deffense",
+    "cost": 0,
+    "image": "cards/7.png"
+  },
+  {
+    "id": 8,
+    "name": "Gyilkos kocka",
+    "type": "attack",
+    "cost": 0,
+    "image": "cards/8.png"
+  },
+  {
+    "id": 9,
+    "name": "Kisgyerek",
+    "type": "attack",
+    "cost": 1,
+    "image": "cards/9.png"
+  },
+  {
+    "id": 10,
+    "name": "Ászok",
+    "type": "neutral",
+    "cost": 0,
+    "image": "cards/10.png"
+  }
+]

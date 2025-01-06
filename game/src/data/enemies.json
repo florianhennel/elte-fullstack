@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Kupac",
+    "hp": 6,
+    "defense": 0,
+    "image": "enemies/1.png"
+  },
+  {
+    "id": 2,
+    "name": "Törmelék",
+    "hp": 10,
+    "defense": 1,
+    "image": "enemies/2.png"
+  },
+  {
+    "id": 3,
+    "name": "Packány",
+    "hp": 8,
+    "defense": 1,
+    "image": "enemies/3.png"
+  },
+  {
+    "id": 4,
+    "name": "Csonti",
+    "hp": 3,
+    "defense": 3,
+    "image": "enemies/4.png"
+  }
+]

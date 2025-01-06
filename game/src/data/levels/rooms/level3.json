@@ -1,0 +1,14 @@
+{
+  "roomCount": 15,
+  "market": {
+    "count": 3,
+    "minDistanceBetweenMarkets": 3
+  },
+  "boss": {
+    "count": 1,
+    "minDistanceFromStartPosition": 3
+  },
+  "fight": {
+    "count": 5
+  }
+}

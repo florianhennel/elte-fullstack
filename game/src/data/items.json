@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Rúd1",
+    "image": "items/1.png"
+  },
+  {
+    "id": 2,
+    "name": "Rúd2",
+    "image": "items/2.png"
+  },
+  {
+    "id": 3,
+    "name": "Rúd3",
+    "image": "items/3.png"
+  },
+  {
+    "id": 4,
+    "name": "Rúd4",
+    "image": "items/4.png"
+  }
+]

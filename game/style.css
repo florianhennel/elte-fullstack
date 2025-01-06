@@ -1,0 +1,105 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+canvas {
+  image-rendering: pixelated;
+  width: 100%;
+  background: blue;
+}
+
+@font-face {
+  font-family: fontRetroGaming;
+  src: url("/fonts/Retro Gaming.ttf");
+}
+
+/*  CARD GAME  */
+
+#cardgame-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./public/cardgame-wallpaper.jpg");
+  background-size: auto 100%;
+  background-position-x: center;
+  z-index: 9999;
+  user-select: none;
+}
+
+#player-hand {
+  position: absolute;
+  left: 0;
+  bottom: 5vh;
+  width: 100vw;
+  height: 40vh;
+  overflow-y: visible;
+  overflow-x: auto;
+  display: flex;
+  gap: 2%;
+  padding: 0 2%;
+}
+
+#player-hand img.card {
+  max-height: 100%;
+  cursor: pointer;
+}
+
+#enemy-img {
+  aspect-ratio: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40vh;
+  image-rendering: pixelated;
+  margin: 5vh;
+}
+
+button#end-turn {
+  position: absolute;
+  bottom: 48vh;
+  left: 0;
+  margin: 0 2%;
+  font-size: 1.5em;
+}
+
+#disp-stats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 6% 2%;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, .5);
+  padding: .5em;
+}
+
+#enemy-stats {
+  color: red;
+}
+
+#player-stats {
+  color: lime;
+}
+
+#endgame-screen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  top: 0;
+  left: 0;
+}
+
+#endgame-screen img {
+  image-rendering: pixelated;
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
