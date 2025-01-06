@@ -12,20 +12,21 @@ import { EnemiesComponent } from './enemies/enemies.component';
 import { EnemyDetailsComponent } from './enemies/enemy-details/enemy-details.component';
 import { LevelsComponent } from './levels/levels.component';
 import { LevelDetailsComponent } from './levels/level-details/level-details.component';
+import { authGuard } from './_guards/auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'game', component: GameComponent },
-  { path: 'cards', component: CardsComponent },
-  { path: 'cards/:id', component: CardDetailsComponent },
-  { path: 'enemies', component: EnemiesComponent },
-  { path: 'enemies/:id', component: EnemyDetailsComponent },
-  { path: 'levels', component: LevelsComponent },
-  { path: 'levels/:id', component: LevelDetailsComponent },
-  { path: 'info', component: InfoComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+  { path: 'game', component: GameComponent, canActivate: [authGuard] },
+  { path: 'cards', component: CardsComponent, canActivate: [authGuard] },
+  { path: 'cards/:id', component: CardDetailsComponent, canActivate: [authGuard] },
+  { path: 'enemies', component: EnemiesComponent, canActivate: [authGuard] },
+  { path: 'enemies/:id', component: EnemyDetailsComponent, canActivate: [authGuard] },
+  { path: 'levels', component: LevelsComponent, canActivate: [authGuard] },
+  { path: 'levels/:id', component: LevelDetailsComponent, canActivate: [authGuard] },
+  { path: 'info', component: InfoComponent, canActivate: [authGuard] },
   { path: '**', component: NotFoundComponent },
 ];

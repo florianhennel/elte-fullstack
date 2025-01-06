@@ -9,23 +9,6 @@ header {
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 
-  .back {
-    position: absolute;
-    top: 0;
-    left: 5rem;
-    height: 5rem;
-    width: 5rem;
-    display: grid;
-    place-items: center;
-
-    button {
-      border-color: transparent;
-      z-index: 10;
-      scale: 110%;
-      margin-inline: unset;
-    }
-  }
-
   button {
     margin-inline: 1rem;
     border-radius: $rounded;
@@ -35,6 +18,11 @@ header {
 h2 {
   font-size: 2rem;
   font-weight: bold;
+  margin: 2rem;
+}
+
+p {
+  font-size: 1.3rem;
   margin: 2rem;
 }
 
@@ -51,6 +39,16 @@ h2 {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     color: white;
     background-color: rgba(255, 255, 255, 0.05);
+
+    img {
+      width: 50%;
+      display: block;
+      aspect-ratio: 1;
+      border-radius: $rounded;
+      margin-inline: auto;
+      margin-bottom: 1rem;
+      image-rendering: pixelated;
+    }
 
     .description {
       color: darkgray;

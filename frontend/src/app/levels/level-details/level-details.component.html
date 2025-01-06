@@ -1,8 +1,11 @@
-<app-header back></app-header>
+<comp-home></comp-home>
+<comp-back></comp-back>
+<comp-header></comp-header>
 <nz-card *ngIf="level">
-  <div class="temp-image"></div>
+  <img src="{{level.image}}" alt="level">
   <h2>{{level.name}}</h2>
   <p>Leírás:</p>
   <p class="description">{{level.description}}</p>
 </nz-card>
 <div class="padding"></div>
+<comp-new-game></comp-new-game>

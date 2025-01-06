@@ -1,0 +1,17 @@
+div {
+  position: absolute;
+  top: 0;
+  left: 5rem;
+  height: 5rem;
+  width: 5rem;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+
+  button {
+    border-color: transparent;
+    z-index: 11;
+    scale: 110%;
+    margin-inline: unset;
+  }
+}

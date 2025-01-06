@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Rúd1",
+    "description": "Rúd1",
+    "image": "1.png"
+  },
+  {
+    "id": 2,
+    "name": "Rúd2",
+    "description": "Rúd2",
+    "image": "2.png"
+  },
+  {
+    "id": 3,
+    "description": "Rúd3",
+    "name": "Rúd3",
+    "image": "3.png"
+  },
+  {
+    "id": 4,
+    "description": "Rúd4",
+    "name": "Rúd4",
+    "image": "4.png"
+  }
+]

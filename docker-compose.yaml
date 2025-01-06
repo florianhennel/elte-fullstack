@@ -1,4 +1,13 @@
 services:
+  game:
+    build: game
+    container_name: game-container
+    image: game-image
+    ports:
+      - "8989:8989"
+    networks:
+      - deno-network
+
   deno-api:
     build: backend
     container_name: deno-container
@@ -8,8 +17,7 @@ services:
     networks:
       - deno-network
     depends_on:
-      mongodb:
-        condition: service_started
+      - game
     develop:
       watch:
         - action: sync

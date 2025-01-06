@@ -3,14 +3,16 @@ import { Location } from '@angular/common';
 import { NzProgressComponent } from 'ng-zorro-antd/progress';
 import { interval, Subject, take, takeUntil } from 'rxjs';
 import { NzCardComponent } from 'ng-zorro-antd/card';
+import { HomeComponent } from '../_components/home/home.component';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [
-    NzProgressComponent,
-    NzCardComponent,
-  ],
+    imports: [
+        NzProgressComponent,
+        NzCardComponent,
+        HomeComponent,
+    ],
   templateUrl: './not-found.component.html',
   styleUrl: './not-found.component.scss'
 })

@@ -1,9 +1,6 @@
+<comp-home></comp-home>
+<comp-back></comp-back>
 <header>
-  <div class="back">
-    <button nz-button (click)="back()" nzSize="large" nzShape="circle">
-      <span nz-icon nzType="arrow-left"></span>
-    </button>
-  </div>
   <div>
     <button nz-button (click)="logout()" nzDanger nzSize="large">
       Kijelentkezés
@@ -12,8 +9,10 @@
 </header>
 
 <h2>Tárgyak</h2>
+<p>Itt jelennek meg a játék során összegyűjtött tárgyak.</p>
 <div class="items">
   <nz-card *ngFor="let item of items">
+    <img src="/items/{{item.image}}" alt="item">
     <h3>{{item.name}}</h3>
     <span class="description">{{item.description}}</span>
   </nz-card>

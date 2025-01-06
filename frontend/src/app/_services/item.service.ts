@@ -16,6 +16,10 @@ export class ItemService {
     );
   }
 
+  assignItem(itemId: string): Observable<any> {
+    return this.http.post(`${BACKEND_URL}/items`, { itemId });
+  }
+
   objectToItem(obj: any): Item {
     const { _id, name, description, userId, image } = obj;
     return { id: _id, name, description, userId, image } as Item;

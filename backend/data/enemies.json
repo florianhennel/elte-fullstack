@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Kupac",
+    "category": "Normal",
+    "description": "Kupac",
+    "attack": 1,
+    "hp": 6,
+    "defense": 0,
+    "image": "1.png"
+  },
+  {
+    "id": 2,
+    "name": "Törmelék",
+    "category": "Normal",
+    "description": "Törmelék",
+    "attack": 1,
+    "hp": 10,
+    "defense": 1,
+    "image": "2.png"
+  },
+  {
+    "id": 3,
+    "name": "Packány",
+    "category": "Elite",
+    "description": "Packány",
+    "attack": 2,
+    "hp": 8,
+    "defense": 1,
+    "image": "3.png"
+  },
+  {
+    "id": 4,
+    "name": "Csonti",
+    "category": "Elite",
+    "description": "Csonti",
+    "attack": 2,
+    "hp": 3,
+    "defense": 3,
+    "image": "4.png"
+  }
+]

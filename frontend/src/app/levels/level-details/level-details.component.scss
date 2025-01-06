@@ -10,9 +10,9 @@ nz-card {
   margin-top: 2rem;
   margin-inline: auto;
 
-  .temp-image {
+  img {
     background-color: darkgray;
-    width: auto;
+    width: 100%;
     aspect-ratio: 4 / 3;
     border-radius: $rounded;
   }

@@ -1,6 +1,8 @@
-<app-header back></app-header>
+<comp-home></comp-home>
+<comp-back></comp-back>
+<comp-header></comp-header>
 <nz-card *ngIf="enemy">
-  <div class="temp-image"></div>
+  <img src="/enemies/{{enemy.image}}" alt="enemy">
   <h2>{{enemy.name}}</h2>
   <p>Kategória: {{enemy.category}}</p>
   <p>Életerő: {{enemy.health}}</p>
@@ -10,3 +12,4 @@
   <p class="description">{{enemy.description}}</p>
 </nz-card>
 <div class="padding"></div>
+<comp-new-game></comp-new-game>

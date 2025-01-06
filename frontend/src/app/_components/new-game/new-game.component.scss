@@ -1,0 +1,50 @@
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  pointer-events: none;
+  background-color: transparent;
+  backdrop-filter: none;
+  transition: all 1s ease;
+
+  &:has(button:hover) {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+  }
+
+
+  button {
+    position: fixed;
+    left: 5rem;
+    bottom: 5rem;
+    z-index: 21;
+    scale: 150%;
+    padding-left: 0 !important;
+    padding-right: 10px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    pointer-events: all;
+
+    &:hover {
+      scale: 200%;
+      animation: pulse 5s infinite;
+    }
+
+    span {
+      margin-top: 5px;
+      margin-left: 8px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 10px dodgerblue; }
+  50% { box-shadow: 0 0 100px dodgerblue; }
+}

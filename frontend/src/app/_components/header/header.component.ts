@@ -2,11 +2,11 @@ import { booleanAttribute, Component, Input } from '@angular/core';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { UserService } from '../../_services/user.service';
-import { NgIf, Location } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
 
 @Component({
-  selector: 'app-header',
+  selector: 'comp-header',
   standalone: true,
   imports: [
     NzButtonComponent,
@@ -26,13 +26,9 @@ export class HeaderComponent {
   })
   canGoBack: boolean = false;
 
-  constructor(private userService: UserService, private location: Location) { }
+  constructor(private userService: UserService) { }
 
   get isLoggedIn(): boolean {
     return this.userService.isLoggedIn;
-  }
-
-  back(): void {
-    this.location.back();
   }
 }

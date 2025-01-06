@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "description": "Ork vezér tere M+H",
+      "name": "Ork vezér tere M+H",
+      "image": "levels/lavafloor.png"
+    },
+    {
+      "id": 2,
+      "description": "Népszínház utca",
+      "name": "Népszínház utca",
+      "image": "levels/lavafloor.png"
+    },
+    {
+      "id": 3,
+      "description": "Keleti aluljáró",
+      "name": "Keleti aluljáró",
+      "image": "levels/lavafloor.png"
+    }
+  ]

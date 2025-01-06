@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Rúgás",
+    "type": "attack",
+    "cost": 1,
+    "image": "1.png",
+    "category": "physical",
+    "rarity": "Közös",
+    "description": "Rúgás",
+    "class": "Támadás"
+  },
+  {
+    "id": 2,
+    "name": "Szúrás",
+    "type": "attack",
+    "cost": 1,
+    "image": "2.png",
+    "category": "physical",
+    "rarity": "Ritka", 
+    "description": "Szúrás",
+    "class": "Támadás"
+  },
+  {
+    "id": 3,
+    "name": "Ököl",
+    "type": "attack",
+    "cost": 0,
+    "image": "3.png",
+    "category": "physical",
+    "rarity": "Alapvető",
+    "description": "Ököl",
+    "class": "Támadás"
+  },
+  {
+    "id": 4,
+    "name": "Alvás",
+    "type": "neutral",
+    "cost": 0,
+    "image": "4.png",
+    "category": "magic",
+    "rarity": "Ritka",
+    "description": "Alvás",
+    "class": "Képesség"
+  },
+  {
+    "id": 5,
+    "name": "Unikum",
+    "type": "healing",
+    "cost": 0,
+    "image": "5.png",
+    "category": "magic",
+    "rarity": "Különleges",
+    "description": "Unikum",
+    "class": "Képesség"
+  },
+  {
+    "id": 6,
+    "name": "Tányér",
+    "type": "neutral",
+    "cost": 0,
+    "image": "6.png",
+    "category": "magic",
+    "rarity": "Ritka",
+    "description": "Tányér",
+    "class": "Állapot"
+  },
+  {
+    "id": 7,
+    "name": "Deszka",
+    "type": "deffense",
+    "cost": 0,
+    "image": "7.png",
+    "category": "physical",
+    "rarity": "Közös",
+    "description": "Deszka",
+    "class": "Védekezés"
+  },
+  {
+    "id": 8,
+    "name": "Gyilkos kocka",
+    "type": "attack",
+    "cost": 0,
+    "image": "8.png",
+    "category": "physical",
+    "rarity": "Különleges",
+    "description": "Gyilkos kocka",
+    "class": "Támadás"
+  },
+  {
+    "id": 9,
+    "name": "Kisgyerek",
+    "type": "attack",
+    "cost": 1,
+    "image": "9.png",
+    "category": "physical",
+    "rarity": "Különleges",
+    "description": "Kisgyerek",
+    "class": "Támadás"
+  },
+  {
+    "id": 10,
+    "name": "Ászok",
+    "type": "neutral",
+    "cost": 0,
+    "image": "10.png",
+    "category": "magic",
+    "rarity": "Ritka",
+    "description": "Ászok",
+    "class": "Képesség"
+  }
+]

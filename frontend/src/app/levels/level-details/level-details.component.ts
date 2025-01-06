@@ -6,15 +6,21 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap, throwError } from 'rxjs';
 import { Level } from '../../_interfaces/level';
 import { LevelService } from '../../_services/level.service';
+import { BackComponent } from '../../_components/back/back.component';
+import { HomeComponent } from '../../_components/home/home.component';
+import { NewGameComponent } from '../../_components/new-game/new-game.component';
 
 @Component({
   selector: 'app-level-details',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    NgIf,
-    NzCardComponent,
-  ],
+    imports: [
+        HeaderComponent,
+        NgIf,
+        NzCardComponent,
+        BackComponent,
+        HomeComponent,
+        NewGameComponent,
+    ],
   templateUrl: './level-details.component.html',
   styleUrl: './level-details.component.scss'
 })

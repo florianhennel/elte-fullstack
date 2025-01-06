@@ -29,14 +29,14 @@ connectDB().then(async () => {
 app.use(express.json());
 app.use(cors(
   {
-    origin: `http://${process.env.origin}`,
+    origin: "http://localhost",
+    //origin: `http://${process.env.origin}`,
     credentials: true,
   },
 ));
 app.use(cookieParser());
 
 app.get("/",(_req: express.Request, res: express.Response) => {
-  console.log("/get request");
   res.send({ message: "Hello World!" });
 });
 app.post("/login", async (req: express.Request, res: express.Response) => {

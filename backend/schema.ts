@@ -9,6 +9,7 @@ const userSchema = new Schema({
 const cardSchema = new Schema({
     category: { type: String, required: true },
     name: { type: String, required: true },
+    type: { type: String, required: true },
     description : { type: String, required: true },
     class: { type: String, required: true },
     cost: { type: Number, required: true },
@@ -20,7 +21,7 @@ const enemySchema = new Schema({
     name: { type: String, required: true },
     category: { type: String, required: true },
     description: { type: String, required: true },
-    health: { type: Number, required: true },
+    hp: { type: Number, required: true },
     attack: { type: Number, required: true },
     defense: { type: Number, required: true },
     image: { type: String, required: false, default: "" },

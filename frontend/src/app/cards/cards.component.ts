@@ -7,19 +7,23 @@ import { CardService } from '../_services/card.service';
 import { NzOptionComponent, NzSelectComponent } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { HomeComponent } from '../_components/home/home.component';
+import { NewGameComponent } from '../_components/new-game/new-game.component';
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [
-    NgForOf,
-    NzCardComponent,
-    HeaderComponent,
-    NzSelectComponent,
-    NzOptionComponent,
-    FormsModule,
-    RouterLink,
-  ],
+    imports: [
+        NgForOf,
+        NzCardComponent,
+        HeaderComponent,
+        NzSelectComponent,
+        NzOptionComponent,
+        FormsModule,
+        RouterLink,
+        HomeComponent,
+        NewGameComponent,
+    ],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss'
 })

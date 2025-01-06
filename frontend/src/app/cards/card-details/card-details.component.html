@@ -1,6 +1,8 @@
-<app-header back></app-header>
+<comp-home></comp-home>
+<comp-back></comp-back>
+<comp-header></comp-header>
 <nz-card *ngIf="card">
-  <div class="temp-image"></div>
+  <img src="/cards/{{card.image}}" alt="card">
   <h2>{{card.name}}</h2>
   <p>Kategória: {{card.category}}</p>
   <p>Költség: {{card.cost}}</p>
@@ -9,3 +11,4 @@
   <p class="description">{{card.description}}</p>
 </nz-card>
 <div class="padding"></div>
+<comp-new-game></comp-new-game>

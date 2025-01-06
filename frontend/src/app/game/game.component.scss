@@ -1,0 +1,24 @@
+iframe {
+  width: 100%;
+  height: calc(100% - 0.5rem);
+  border: none;
+}
+
+.circle {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(5px);
+
+  &:first-of-type {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  &:last-of-type {
+    top: 1rem;
+    left: 6rem;
+  }
+}

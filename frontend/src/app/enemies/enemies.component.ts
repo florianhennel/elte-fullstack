@@ -6,18 +6,22 @@ import { Enemy } from '../_interfaces/enemy';
 import { EnemyService } from '../_services/enemy.service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { HomeComponent } from '../_components/home/home.component';
+import { NewGameComponent } from '../_components/new-game/new-game.component';
 
 @Component({
   selector: 'app-enemies',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    NgForOf,
-    NzOptionComponent,
-    NzSelectComponent,
-    FormsModule,
-    RouterLink,
-  ],
+    imports: [
+        HeaderComponent,
+        NgForOf,
+        NzOptionComponent,
+        NzSelectComponent,
+        FormsModule,
+        RouterLink,
+        HomeComponent,
+        NewGameComponent,
+    ],
   templateUrl: './enemies.component.html',
   styleUrl: './enemies.component.scss'
 })
